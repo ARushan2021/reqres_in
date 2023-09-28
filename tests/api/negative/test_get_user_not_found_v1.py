@@ -11,7 +11,7 @@ import pytest
                          ['200',
                           '300'])
 @allure.title('Неуспешный запрос информации о пользователе, неверный id')
-def test_user_not_found_v1(base, id_user):
+def test_get_user_not_found_v1(base, id_user):
 
     response = base.api_v1.get_api_users(id_user=id_user)
     base.asserts.assert_empty_body(response=response, exp_status_code=404)

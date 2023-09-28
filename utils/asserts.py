@@ -1,5 +1,4 @@
 """Модуль с шагами по проверке"""
-import json
 import allure
 from config import Config
 
@@ -14,8 +13,7 @@ class AssertTests:
             status_code: полученный статус код
             exp_status_code: ожидаемый статус код
         """
-
-        msg = f'Статус код ответа "{status_code}" отличен от "{exp_status_code}"'
+        msg = f'Статус код "{status_code}" отличен от "{exp_status_code}"'
         assert int(status_code) == exp_status_code, msg
 
     @staticmethod
@@ -24,10 +22,9 @@ class AssertTests:
         Args:
             response: полученный ответ
         """
-
         time_response = response.elapsed.total_seconds()
         assert time_response < Config.TIME_RESPONSE, \
-            f'Ошибка! Время ответа на запрос превысило 2 сек. и составило: {time_response}'
+            f'Ошибка! Время ответа на запрос превысило {Config.TIME_RESPONSE} сек. и составило: {time_response}'
 
     @staticmethod
     @allure.step('Проверка статус кода, времени ответа на запрос, полей email и first_name в теле ответа')
@@ -83,7 +80,7 @@ class AssertTests:
             exp_status_code: ожидаемый статус код
         """
         response_body = response.text
-        assert response_body == '' or '{}'
+        assert response_body == '' or '{}', f'Тело ответа не пустое - {response_body}'
         status_code = response.status_code
         AssertTests.check_status_code(status_code, exp_status_code)
         AssertTests.validate_time_response(response)
@@ -104,3 +101,40 @@ class AssertTests:
         status_code = response.status_code
         AssertTests.check_status_code(status_code, exp_status_code)
         AssertTests.validate_time_response(response)
+
+    @staticmethod
+    @allure.step('Проверка заголовка странички')
+    def assert_title(exp_heading, heading_site):
+        """Метод для проверки заголовка странички
+            Args:
+                exp_heading: ожидаемый заголовок
+                heading_site: заголовок на web страничке
+        """
+        assert heading_site == exp_heading, f'Не верный заголовок сайта: *{heading_site}*!'
+
+    @staticmethod
+    @allure.step('Проверка тела запроса из web и api')
+    def assert_web_with_api(response_body_web,
+                            response_body_api):
+        """Метод для проверки тела ответа из web и api
+            Args:
+                response_body_web: тело ответа web
+                response_body_api: тело ответа из api
+        """
+        assert response_body_web == response_body_api, f'Тело ответа из web - {response_body_web}' \
+                                                       f' не совпадает с телом ответа api - {response_body_api}'
+
+    @staticmethod
+    @allure.step('Проверка полей name, job в теле ответа из web и api')
+    def assert_job_and_name_web_with_api(response_body_web,
+                                         response_body_api):
+        """Метод для проверки полей name, job в теле ответа из web и api
+            Args:
+                response_body_web: тело ответа web
+                response_body_api: тело ответа из api
+        """
+        assert response_body_web['name'] == response_body_api['name'], f'Поле name из web - {response_body_web["name"]}' \
+                                                                       f' не совпадает с api - {response_body_api["name"]}'
+        assert response_body_web['job'] == response_body_api['job'], f'Поле job из web - {response_body_web["job"]}' \
+                                                                     f' не совпадает с api - {response_body_api["job"]}'
+

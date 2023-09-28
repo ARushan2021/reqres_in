@@ -1,0 +1,39 @@
+
+***************
+
+Test: tests/web/test_create_new_user.py::test_create_new_user[{"name": "morpheus","job": "leader1"}] (call)
+Time: 2023-09-28 16:22:11.326714
+Request method: POST
+Request URL: https://reqres.in/api/users/
+Request body: {"name": "morpheus","job": "leader1"}
+
+Response status code: 201
+Response body: {"name":"morpheus","job":"leader1","id":"404","createdAt":"2023-09-28T13:22:10.232Z"}
+Response headers: {'Date': 'Thu, 28 Sep 2023 13:22:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '85', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"55-dZ4CsFVE7oTotioKbdmyjA4gBOM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=3giB84kqoXU%2F9Q2%2BCbrksuXFwA16V%2FoxOkU3iQmUp%2BizQrmYboFN99T6CP%2F%2BO%2BKhfHaAn3obqv4%2F69OfOjMZWc%2F5wJ0QY17QpDxfjnEquLnbnb27Fr8ijmwbDA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '80dc4b2d4efb164e-DME'}
+Response cookies: {}
+
+***************
+
+Test: tests/web/test_delete_user.py::test_delete_user[2] (call)
+Time: 2023-09-28 16:22:44.046520
+Request method: DELETE
+Request URL: https://reqres.in/api/users/2
+Request body: None
+
+Response status code: 204
+Response body: 
+Response headers: {'Date': 'Thu, 28 Sep 2023 13:22:42 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PUWsqio7x02ExDehaGmMbtKVbivSPqe6JAvQVwbz6d85gSbncD9oOq2biVbT5axQJ0VH7RRXevbpw4DDZF32fMS7XT3Jhw8C2SOc2H57zqODsTNSHa2KVd8zjw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '80dc4bf9dba33a77-DME'}
+Response cookies: {}
+
+***************
+
+Test: tests/web/test_single_user.py::test_get_single_user[2] (call)
+Time: 2023-09-28 16:22:50.580599
+Request method: GET
+Request URL: https://reqres.in/api/users/2
+Request body: None
+
+Response status code: 200
+Response body: {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+Response headers: {'Date': 'Thu, 28 Sep 2023 13:22:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6729', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=H8VsMSjClyrdGTxFyzf8kUOxtyq9cJ7mWlKC457PNvZlUxEye94Nc4%2FLS2jFcC42%2Bzb2G2IY6RK6fxfVxAwXWx%2B7RHNYBu43so7m1XUFTQsHR1NEed4u1bM7LA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '80dc4c2368590058-DME', 'Content-Encoding': 'gzip'}
+Response cookies: {}

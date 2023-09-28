@@ -17,10 +17,8 @@ class ApiV1(Common):
     @allure.step('Get запрос к API')
     def get_api_users(self, id_user: int):
         """Метод для отправки Get запроса, resourse - users
-
         Args:
             id_user: id пользователя
-
         Returns:
             Тело ответа
         """
@@ -30,10 +28,8 @@ class ApiV1(Common):
     @allure.step('Get запрос к API')
     def get_api_unknown(self, id_user: int):
         """Метод для отправки Get запроса, resourse - unknown
-
         Args:
             id_user: id пользователя
-
         Returns:
             Тело ответа
         """
@@ -43,10 +39,8 @@ class ApiV1(Common):
     @allure.step('Post запрос к API')
     def post_api_users(self, body_request: str):
         """Метод для отправки Post запроса, resourse - users
-
         Args:
             body_request: тело запроса для отправки
-
         Returns:
             Тело ответа
         """
@@ -57,10 +51,8 @@ class ApiV1(Common):
     @allure.step('Post запрос к API')
     def post_api_register(self, body_request: str):
         """Метод для отправки Post запроса, resourse - register
-
         Args:
             body_request: тело запроса для отправки
-
         Returns:
             Тело ответа
         """
@@ -71,10 +63,8 @@ class ApiV1(Common):
     @allure.step('DELETE запрос к API')
     def delete_api(self, id_user: str):
         """Метод для отправки Delete запроса
-
         Args:
             id_user: id пользователя
-
         Returns:
             Тело ответа
         """

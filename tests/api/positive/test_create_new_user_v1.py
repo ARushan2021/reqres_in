@@ -12,8 +12,8 @@ from api.reqres.common import Common
 @pytest.mark.parametrize('body_request',
                          [f'{Common.REQUEST_BODY_POST}',
                           f'{Common.REQUEST_BODY_POST2}'])
-@allure.title('Регистрация нового пользователя')
-def test_new_user_v1(base, body_request):
+@allure.title('Создание нового пользователя')
+def test_create_new_user_v1(base, body_request):
 
     response = base.api_v1.post_api_users(body_request)
     base.asserts.assert_create_new_user(response=response, exp_status_code=201, body_request=body_request)

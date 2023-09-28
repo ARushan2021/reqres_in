@@ -14,15 +14,13 @@ class Request:
 
     def custom_request(self, method, url, params=None, data=None, headers=None, cookies=None) -> requests.Response:
         """Кастомная функция по отправки запроса.
-        
         Args:
             method: Метод запроса (GET, POST, ...)
             url: ссылка запроса
-            params: 
+            params: для передачи параметров запроса в словаре
             data: body запроса
             headers: заголовки
             cookies: куки
-        
         Returns:
             response: объект результата запроса
         """
